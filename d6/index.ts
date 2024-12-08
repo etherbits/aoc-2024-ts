@@ -1,4 +1,3 @@
-import { sleep } from "bun";
 import { getLines } from "../utils/helper";
 
 export async function p1() {
