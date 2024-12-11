@@ -2,6 +2,7 @@ import { argv } from "bun";
 import * as d1 from "./d1";
 import * as d5 from "./d5";
 import * as d6 from "./d6";
+import * as d7 from "./d7";
 
 async function main() {
   if (argv.length != 4) {
@@ -35,6 +36,14 @@ async function main() {
     case "6-2":
       console.log("Running 6 2");
       d6.p2();
+      break;
+    case "7-1":
+      console.log("Running 7 1");
+      d7.p1();
+      break;
+    case "7-2":
+      console.log("Running 7 2");
+      d7.p2();
       break;
     default:
       console.log("No such solution");
