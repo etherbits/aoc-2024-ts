@@ -7,6 +7,7 @@ import * as d8 from "./d8";
 import * as d9 from "./d9";
 import * as d10 from "./d10";
 import * as d11 from "./d11";
+import * as d12 from "./d12";
 
 async function main() {
   if (argv.length != 4) {
@@ -80,6 +81,14 @@ async function main() {
     case "11-2":
       console.log("Running 11 2");
       d11.p2();
+      break;
+    case "12-1":
+      console.log("Running 12 1");
+      d12.p1();
+      break;
+    case "12-2":
+      console.log("Running 12 2");
+      d12.p2();
       break;
     default:
       console.log("No such solution");
