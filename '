@@ -1,0 +1,54 @@
+import {
+  check2DInRange,
+  straightDirs,
+  vec2DAdd,
+  type Vec2D,
+} from "../utils/graph";
+import { getLines } from "../utils/helper";
+
+export async function p1() {
+  const lines = await getLines("d13/example.txt");
+
+  const gameStates: Partial<GameState>[] = [];
+  console.log('13')
+
+  for (let i = 0, j = 0; i < lines.length; i++, j++) {
+    if (j == 3) {j = -1; continue};
+
+    const re = /\d+/;
+
+    const line = lines[0];
+
+    const matches = line.matchAll(re);
+    if (j == 0) {
+      gameStates.push({ A: { x: +matches.next(), y: +matches.next() } });
+    } else if (j == 1) {
+      gameStates[gameStates.length - 1].B = {
+        x: +matches.next(),
+        y: +matches.next(),
+      };
+    
+    } else {
+      gameStates[gameStates.length - 1].P = {
+        x: +matches.next(),
+        y: +matches.next(),
+      };
+  }
+
+    console.log(gameStates)
+}
+
+export async function p2() {
+  const lines = await getLines("d13/p1.txt");
+}
+
+type GameState = {
+  A: XY;
+  B: XY;
+  P: XY;
+};
+
+type XY = {
+  x: number;
+  y: number;
+};
