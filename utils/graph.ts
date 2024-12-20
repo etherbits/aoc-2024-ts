@@ -20,6 +20,20 @@ export function check2DInRange(a: Vec2D, max: Vec2D, min = { x: 0, y: 0 }) {
   return !(a.x < min.x || a.x >= max.x || a.y < min.y || a.y >= max.y);
 }
 
+export function wrap2D(a: Vec2D, max: Vec2D, min = { x: 0, y: 0 }): Vec2D {
+  return { x: wrap(a.x, max.x, min.x), y: wrap(a.y, max.y, min.y) };
+}
+
+function wrap(num: number, max: number, min: number) {
+  if (num < min) {
+    return max - Math.abs(min - num);
+  } else if (num >= max) {
+    return min + Math.abs(num - max);
+  }
+
+  return num;
+}
+
 export const straightDirs: Vec2D[] = [
   { x: -1, y: 0 },
   { x: 0, y: -1 },
