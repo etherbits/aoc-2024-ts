@@ -11,6 +11,7 @@ import * as d12 from "./d12";
 import * as d13 from "./d13";
 import * as d14 from "./d14";
 import * as d15 from "./d15";
+import * as d16 from "./d16";
 
 async function main() {
   if (argv.length != 4) {
@@ -116,6 +117,14 @@ async function main() {
     case "15-2":
       console.log("Running 15 2");
       d15.p2();
+      break;
+    case "16-1":
+      console.log("Running 16 1");
+      d16.p1();
+      break;
+    case "16-2":
+      console.log("Running 16 2");
+      d16.p2();
       break;
     default:
       console.log("No such solution");
